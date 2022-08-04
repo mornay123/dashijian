@@ -1,4 +1,4 @@
-const getUserInfo = () => {
+function getUserInfo() {
   $.ajax({
     type: "GET",
     url: "/my/userinfo",
@@ -14,7 +14,7 @@ const getUserInfo = () => {
       renderAvatar(res.data);
     },
   });
-};
+}
 const renderAvatar = (data) => {
   let name = data.nickname || data.username;
   //   设置欢迎文本
@@ -25,7 +25,7 @@ const renderAvatar = (data) => {
   } else {
     // 渲染文本头像
     $(".txt-avatar").hide();
-    let forstName = name[0].toUpperCase();
+    let firstName = name[0].toUpperCase();
     $(".txt-avatar").html(firstName);
   }
 };
